@@ -1,0 +1,1 @@
+{"name":"rentfleet-client","version":"2.0.0","private":true,"engines":{"node":"22.x"},"scripts":{"build":"node build.mjs","dev":"node dev.mjs","start":"node dev.mjs"},"license":"UNLICENSED"}

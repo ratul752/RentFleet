@@ -1,0 +1,10 @@
+import {mkdir,writeFile,cp,rm} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import customer from './src/pages/customer.mjs';
+import admin from './src/pages/admin.mjs';
+const root=path.dirname(fileURLToPath(import.meta.url)); const dist=path.join(root,'dist');
+await rm(dist,{recursive:true,force:true});await mkdir(dist,{recursive:true});
+await cp(path.join(root,'src/assets'),dist,{recursive:true});
+await writeFile(path.join(dist,'index.html'),customer);await writeFile(path.join(dist,'admin/index.html'),admin);
+console.log('RentFleet client built: dist/');
